@@ -192,7 +192,7 @@ open class XMSegmentedControl: UIView {
      - Note: Changes only take place if `contentType` is `Text`
      */
     open var font = UIFont(name: "AvenirNext-DemiBold", size: 15)!
-    
+    open var selectedFont: UIFont = UIFont.boldSystemFont(ofSize: 16.0)
     /// Sets the segmented control selected item highlight style to `Background`, `TopEdge` or `BottomEdge`.
     open var selectedItemHighlightStyle: XMSelectedItemHighlightStyle = .background
     
@@ -286,7 +286,7 @@ open class XMSegmentedControl: UIView {
                 case .text:
                     tab.setTitle(segmentTitle[i], for: UIControl.State())
                     tab.setTitleColor(i == selectedSegment ? highlightTint : tint, for: UIControl.State())
-                    tab.titleLabel?.font = font
+                    tab.titleLabel?.font = i == selectedSegment ? selectedFont : font
                 case .hybrid:
                     let insetAmount: CGFloat = 8 / 2.0
                     tab.imageEdgeInsets = UIEdgeInsets(top: 12, left: -insetAmount, bottom: 12, right: insetAmount)
