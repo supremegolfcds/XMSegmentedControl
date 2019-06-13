@@ -311,7 +311,7 @@ public class XMSegmentedControl: UIView {
     }
     
     /// Called whenever a segment is pressed. Sends the information to the delegate.
-    @objc func segmentPressed(sender:UIButton){
+    @objc public func segmentPressed(sender:UIButton){
         /// Returns true if the view is a `UIButton`
         func isUIButton(view:UIView) -> Bool {
             return view is UIButton ? true : false
